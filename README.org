@@ -1,0 +1,21 @@
+#+TITLE:     KiCad Circuits
+#+AUTHOR:    David Conner
+#+EMAIL:     noreply@te.xel.io
+#+DESCRIPTION: notes
+
+
+*** Files
+
++ Spice not generated from project schematics go in =./spice/=
+  - the =KiCad-Spice-Library= is in there as a git submodule
++ Each of the other folders are individual circuits via eeschema.
+  - The naming should improve, but class-related circuits will start with a
+    chapter number.
++ For now, each eeschema circuit should stand on its own.
+  - The simulations are a inflexible & tough to change within eeschema.
+  - Circuits with more complex logic should be exported to simulate via
+    =NgSpice.jl=.
++ For each project
+  - I may generate subdirectories for =data=, =plots=, etc.
+  - These will be modeled on [[https://github.com/danielrioslinares/ngspice-examples/blob/master/lpflt_rc/Makefile][danielrioslinares/ngspice-examples]], although will
+    not likely use a =Makefile=.

@@ -1,0 +1,37 @@
+.title KiCad schematic
+.include "/data/edu/vwcc/etr237/kicad/circuits/spice/KiCad-Spice-Library/Models/Transistor/BJT/BC546.lib"
+Rc1 cc out1 10K
+Rc2 cc out2 10k
+Q2 out2 in2 Net-_Q1-Pad3_ BC546B
+Vin1 in1 0 sffm(0 1.0 10k 5 100)
+Vin2 0 in2 sin(0 1.0 10k)
+Vee1 ee 0 dc(1)
+Vcc1 cc 0 dc(1)
+Re1 Net-_Q1-Pad3_ ee 10K
+Q1 out1 in1 Net-_Q1-Pad3_ BC546B
+RS1 0 out1 10k
+RS2 0 out2 10k
+.save @rc1[i]
+.save @rc2[i]
+.save @q2[ib]
+.save @q2[ic]
+.save @q2[ie]
+.save @vin1[i]
+.save @vin2[i]
+.save @vee1[i]
+.save @vcc1[i]
+.save @re1[i]
+.save @q1[ib]
+.save @q1[ic]
+.save @q1[ie]
+.save @rs1[i]
+.save @rs2[i]
+.save V(Net-_Q1-Pad3_)
+.save V(cc)
+.save V(ee)
+.save V(in1)
+.save V(in2)
+.save V(out1)
+.save V(out2)
+.tran 1u 1m 
+.end

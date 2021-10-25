@@ -1,0 +1,85 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Simulation_SPICE:VPULSE VP1
+U 1 1 61676763
+P 6250 3800
+F 0 "VP1" H 6380 3891 50  0000 L CNN
+F 1 "VPULSE" H 6380 3800 50  0000 L CNN
+F 2 "" H 6250 3800 50  0001 C CNN
+F 3 "~" H 6250 3800 50  0001 C CNN
+F 4 "Y" H 6250 3800 50  0001 L CNN "Spice_Netlist_Enabled"
+F 5 "V" H 6250 3800 50  0001 L CNN "Spice_Primitive"
+F 6 "pulse(0 1 2n 2n 2n 50n 100n)" H 6380 3709 50  0000 L CNN "Spice_Model"
+	1    6250 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:R R1
+U 1 1 61677164
+P 6250 3350
+F 0 "R1" H 6318 3396 50  0000 L CNN
+F 1 "2k" H 6318 3305 50  0000 L CNN
+F 2 "" H 6250 3350 50  0001 C CNN
+F 3 "~" H 6250 3350 50  0001 C CNN
+	1    6250 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6250 3100 7750 3100
+Wire Wire Line
+	6250 4000 6250 4150
+$Comp
+L pspice:QNPN Q1
+U 1 1 61678069
+P 8050 3100
+F 0 "Q1" H 8277 3146 50  0000 L CNN
+F 1 "QNPN" H 8277 3055 50  0000 L CNN
+F 2 "" H 8050 3100 50  0001 C CNN
+F 3 "~" H 8050 3100 50  0001 C CNN
+	1    8050 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8200 4150 8200 3450
+Wire Wire Line
+	6250 4150 8200 4150
+$Comp
+L pspice:C C1
+U 1 1 6167DC0C
+P 6250 4400
+F 0 "C1" H 6428 4446 50  0000 L CNN
+F 1 "200u" H 6428 4355 50  0000 L CNN
+F 2 "" H 6250 4400 50  0001 C CNN
+F 3 "~" H 6250 4400 50  0001 C CNN
+	1    6250 4400
+	1    0    0    -1  
+$EndComp
+Connection ~ 6250 4150
+$Comp
+L pspice:0 #GND01
+U 1 1 6167ACDD
+P 6250 4650
+F 0 "#GND01" H 6250 4550 50  0001 C CNN
+F 1 "0" H 6250 4550 50  0000 C CNN
+F 2 "" H 6250 4650 50  0001 C CNN
+F 3 "~" H 6250 4650 50  0001 C CNN
+	1    6250 4650
+	1    0    0    -1  
+$EndComp
+Text Label 6250 3100 0    50   ~ 0
+net1
+$EndSCHEMATC

@@ -1,0 +1,34 @@
+.title KiCad schematic
+.include "/data/edu/vwcc/etr237/kicad/circuits/spice/KiCad-Spice-Library/Models/Transistor/BJT/BC546.lib"
+Cin1 Net-_Cin1-Pad1_ in 10u
+Cout1 out Net-_Cout1-Pad2_ 10u
+R1 Net-_Cin1-Pad1_ vcc 68k
+GND02 0 0
+GND04 0 0
+VCC1 vcc 0 5
+Vin1 in 0 dc 0 ac 1
+GND03 0 0
+GND01 0 0
+R3 vcc Net-_Cout1-Pad2_ 10k
+GND05 0 0
+Q1 Net-_Cout1-Pad2_ Net-_Cin1-Pad1_ 0 BC546B
+R2 0 Net-_Cin1-Pad1_ 10k
+RLoad1 0 out 10k
+.save @cin1[i]
+.save @cout1[i]
+.save @r1[i]
+.save @vcc1[i]
+.save @vin1[i]
+.save @r3[i]
+.save @q1[ib]
+.save @q1[ic]
+.save @q1[ie]
+.save @r2[i]
+.save @rload1[i]
+.save V(Net-_Cin1-Pad1_)
+.save V(Net-_Cout1-Pad2_)
+.save V(in)
+.save V(out)
+.save V(vcc)
+.ac dec 10 10 100k 
+.end
